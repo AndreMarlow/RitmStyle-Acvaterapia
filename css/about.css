@@ -1,0 +1,16 @@
+.first-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.second-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-container-about {
+    margin-right: 8px;
+}

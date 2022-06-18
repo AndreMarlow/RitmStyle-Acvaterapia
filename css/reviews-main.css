@@ -1,0 +1,11 @@
+.carousel-item-style {
+    padding: 10px 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: #018ABE80;
+
+}
+
+.carousel-indicators {
+    margin-bottom: -2rem;
+}

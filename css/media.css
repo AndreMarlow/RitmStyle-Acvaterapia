@@ -1,0 +1,133 @@
+@media screen and (max-width: 1399px) {
+
+    .style-contacts {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .header-background {
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .style-contacts {
+        padding: 10px;
+    }
+}
+
+
+@media screen and (max-width: 994px) {
+    .media1 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .header-background {
+        height: 300px;
+    }
+
+    .first-container-contacts {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .margin-5 {
+        margin-top: 5px;
+    }
+
+    .right-container-news {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header-background {
+        height: 250px;
+    }
+
+    .fonts-w700 h3 {
+        font-size: 18px;
+    }
+
+    .fonts-w700 h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .news-container-media {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .header-background {
+        height: 225px;
+    }
+
+    .fonts-w700 h3 {
+        font-size: 18px;
+    }
+
+    .fonts-w700 h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .first-container-contacts {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 475px) {
+    .header-background {
+        height: 200px;
+    }
+
+    .fonts-w700 h3 {
+        font-size: 18px;
+    }
+
+    .fonts-w700 h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .media2 {
+        display: none;
+    }
+}
+
+/* about information */
+
+@media screen and (max-width: 1024px) {
+    .first-container {
+        flex-direction: column;
+    }
+
+    .second-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .first-container {
+        flex-direction: row;
+    }
+
+    .second-container {
+        flex-direction: row-reverse;
+
+    }
+}
+
+/* about information */

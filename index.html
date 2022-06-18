@@ -1,0 +1,435 @@
+<?php
+include_once "php/modal.php";
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RitmStyle</title>
+  <link rel="shortcut icon" href="icon/favicon.ico.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="fonts/ElMessiri-VariableFont_wght.ttf">
+
+  <link rel="stylesheet" href="./css/about.css">
+  <link rel="stylesheet" href="./css/reviews-main.css">
+  <link rel="stylesheet" href="./css/price.css">
+  <link rel="stylesheet" href="./css/contacts.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/media.css">
+
+
+</head>
+
+<body>
+  <!-- navigation -->
+  <div class="container">
+    <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <img src="img/Group1.png" alt="">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="index.html" class="nav-link px-2 fonts-w400">Главная</a></li>
+        <li><a href="news.html" class="nav-link px-2  fonts-w400">Сеансы</a></li>
+        <li><a href="index.html#reviews" class="nav-link px-2  fonts-w400 media1">Отзывы</a></li>
+        <li><a href="index.html#contacts" class="nav-link px-2  fonts-w400">Контакты</a></li>
+        <li><a href="new-format.html" class="nav-link px-2  fonts-w400 media1">Новости</a></li>
+        <li><a href="index.html#about-us" class="nav-link px-2 fonts-w400 media1">Обо мне</a></li>
+        <li><a href="blog.html" class="nav-link px-2 fonts-w400">Блог</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end d-flex justify-content-end">
+
+        <?php
+        if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['tel'])) {
+          echo sendEmail($_POST['email']);
+          echo storeToDatabase($_POST['email'], $_POST['name'], $_POST['tel']);
+        }
+        ?>
+
+        <button href="#" type="button" class="btn btn-outline-secondary me-2 fonts-w300 open-popup">Записаться</button>
+      </div>
+    </header>
+  </div>
+
+  <!-- first-screen -->
+  <div class="first-screen">
+    <div class="container">
+      <div class="jumbotron header-background d-flex flex-row align-items-center">
+
+        <div class="fonts-w700 d-flex flex-column align-items-center">
+          <h3 class="media2">
+            <img class="img-rec-left lists-90" src="img/lists.png" alt="lists">
+            Укрепление здоровья
+            <img class="img-rec-right" src="img/lists.png" alt="lists">
+          </h3>
+          <h1 style="text-align: center;">Акватерапия
+            <br> RitmStyle
+          </h1>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- services -->
+  <div class="services-head mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <h3 class="fonts-w700"><img class="lists-90" src="img/lists.png" alt="lists">
+            Сеансы RitmStyle <img src="img/lists.png" alt="lists">
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services-main mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center">
+          <img class="img-fluid margin-top-on-media" src="img/gr18.png" alt="gr18">
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 d-flex">
+          <div class="row align-content-between">
+            <img class="img-fluid margin-top-on-media" src="img/gr20.png" alt="">
+            <img class="img-fluid margin-top-on-media" src="img/gr19.png" alt="">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 d-flex">
+          <div class="row align-content-between">
+            <img class="img-fluid margin-top-on-media" src="img/gr21.png" alt="">
+            <img class="img-fluid margin-top-on-media" src="img/gr22.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- reviews  -->
+  <div class="reviews-head mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <h3 class="fonts-w700"><img class="lists-90" src="img/lists.png" alt="lists">
+            Отзывы <img src="img/lists.png" alt="lists">
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-main mt-3" id="reviews">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="d-block carousel-item-style">
+                <h4>
+                  Кира Иванова
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus diam risus morbi nulla dictum. Urna mi
+                  orci
+                  gravida placerat amet, eu, aliquet facilisis aliquet. Dolor praesent nam ornare fringilla enim nibh
+                  donec
+                  sit imperdiet. Amet, diam duis eu sit et. Volutpat vestibulum a lectus sed blandit.
+                  Venenatis urna mattis eu enim molestie iaculis et aliquet. Velit in pellentesque vestibulum phasellus
+                  orci. Fermentum sed phasellus aliquam nulla non aenean. Quisque id nunc, mauris potenti a massa.
+                  Fermentum
+                  at elit, convallis leo dolor aliquet id elementum. Ullamcorper sociis et cum bibendum in egestas.
+                  Diam,
+                  urna, sed tempus mollis aliquam elit. Facilisi nam nulla pulvinar mauris vel lacinia venenatis.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-block carousel-item-style">
+                <h4>Яна Жирнова</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacinia eget mattis orci aliquam enim
+                  tincidunt gravida aliquet ut. Ipsum vulputate morbi felis, lobortis tincidunt. Pretium dictum odio
+                  feugiat auctor diam sit viverra gravida. Lobortis arcu rhoncus, mi mi vitae feugiat amet, vitae ac.
+                  Cursus diam turpis iaculis nisi sit. Vel blandit et sit elit vestibulum feugiat proin tempor, justo.
+                  Diam commodo, pellentesque at porttitor tristique faucibus faucibus morbi. Bibendum pretium lacus,
+                  tempus viverra vitae odio nunc eget.
+                  Tortor fermentum orci neque sed. Mauris faucibus diam lorem erat ullamcorper donec egestas neque.
+                  Maecenas malesuada mauris magnis sed id. Luctus vitae justo, in consectetur arcu. Nulla feugiat at eu
+                  in
+                  aliquet. Diam nunc, libero mauris tellus suspendisse morbi sagittis semper. </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-block carousel-item-style">
+                <h4>Александра Дмитриевна</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacinia eget mattis orci aliquam enim
+                  tincidunt
+                  gravida aliquet ut. Ipsum vulputate morbi felis, lobortis tincidunt. Pretium dictum odio feugiat
+                  auctor
+                  diam sit viverra gravida. Lobortis arcu rhoncus, mi mi vitae feugiat amet, vitae ac. Cursus diam
+                  turpis
+                  iaculis nisi sit. Vel blandit et sit elit vestibulum feugiat proin tempor, justo. Diam commodo,
+                  pellentesque at porttitor tristique faucibus faucibus morbi. Bibendum pretium lacus, tempus viverra
+                  vitae
+                  odio nunc eget.
+                  Tortor fermentum orci neque sed. Mauris faucibus diam lorem erat ullamcorper donec egestas neque.
+                  Maecenas
+                  malesuada mauris magnis sed id. Luctus vitae justo, in consectetur arcu. Nulla feugiat at eu in
+                  aliquet.
+                  Diam nunc, libero mauris tellus suspendisse morbi sagittis semper. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- about -->
+  <div class="about-head mt-5" id="about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <h3 class="fonts-w700"><img class="lists-90" src="img/lists.png" alt="lists">
+            Об RitmStyle <img src="img/lists.png" alt="lists">
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-main mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="first-container mt-1">
+          <div class="left-container-about col">
+            <h3 class="fonts-w700">RitmStyle массаж</h3>
+            <p class="fonts-w300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in purus, sed tellus
+              eget mattis nibh quam. Eu ornare nunc, id est. Erat consectetur etiam a sit diam in imperdiet amet. Diam
+              nisl, ipsum suscipit amet. Eleifend amet habitasse proin quis adipiscing.
+              Nisl convallis mauris in consequat. Sit ac vitae posuere maecenas dictumst quam. Felis amet diam, non
+              augue massa. Egestas molestie lobortis rhoncus, elit nulla nisl. Habitant tortor at tempor.
+            </p>
+          </div>
+          <div class="right-container-about">
+            <img class="img-fluid" src="img/Rectangl23.png" alt="">
+          </div>
+        </div>
+
+        <div class="second-container mt-1 ">
+          <div class="left-container-about col">
+            <h3 class="fonts-w700">RitmStyle массаж</h3>
+            <p class="fonts-w300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu cras quis ac a non ut
+              viverra turpis eget. Hendrerit quis pulvinar massa ipsum sem. Donec posuere nulla enim non neque etiam.
+              Eros arcu, pulvinar penatibus luctus ridiculus sagittis vel nunc hac. Nisi, diam tincidunt dui viverra.
+              Eget quis ultricies sem nunc risus senectus luctus ultricies. Enim feugiat pharetra pharetra et.
+              Pulvinar arcu at morbi posuere cursus. Fermentum est sit enim velit ornare molestie. Ipsum nisi id sed
+              tempor elementum. Mi nunc eget pellentesque ipsum. Suspendisse risus a id vel massa tincidunt. Hendrerit
+              blandit in augue vel mi quam magna egestas. Fringilla ac lacus viverra ullamcorper leo, enim vitae id
+              aliquam. Magna sed tristique tellus enim, netus tempor at elit dui. Ullamcorper hendrerit feugiat libero
+              tellus diam egestas dui tellus odio.</p>
+          </div>
+          <div class="right-container-about">
+            <img class="img-fluid" src="img/Rectangl23.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- price -->
+
+  <div class="price-head mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <h3 class="fonts-w700"><img class="lists-90" src="img/lists.png" alt="lists">
+            Стоимость <img src="img/lists.png" alt="lists">
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-main mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 fonts-w700 first-container-price">
+
+          <div class="price-main-info">
+            <h3><img class="price-main-img lists-90" src="img/lists.png" alt="">RitmStyle с погружением</h3>
+            <h3>1000р</h3>
+          </div>
+
+          <div class="price-main-info">
+            <h3><img class="price-main-img lists-90" src="img/lists.png" alt="">Абонемент на RitmStyle</h3>
+            <h3>5500p</h3>
+          </div>
+
+          <div class="price-main-info">
+            <h3><img class="price-main-img lists-90" src="img/lists.png" alt="">RitmStyle для пар</h3>
+            <h3>6000p</h3>
+          </div>
+
+          <div class="price-main-info">
+            <h3><img class="price-main-img lists-90" src="img/lists.png" alt="">RitmStyle для беременных</h3>
+            <h3>13500p</h3>
+          </div>
+
+          <div class="price-main-info">
+            <h3><img class="price-main-img lists-90" src="img/lists.png" alt="">RitmStyle + фото сесия</h3>
+            <h3>11500p</h3>
+          </div>
+
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex flex-column mt-3">
+          <img class="img-fluid" src="img/unsplash_M3fhZSBFoFQ.png" alt="">
+
+          <h3 class="fonts-w700 mt-2" style="text-align:center;">Подарочная карта</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- contacts -->
+
+  <div class="contacts-main mt-5" id="contacts">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 fonts-w700 first-container-contacts">
+          <div class="style-contacts col-md-6 col-lg-12">
+            <h3>Бассейн WorkClass</h3>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+                viewBox="0 0 16 16">
+                <path
+                  d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              </svg>
+              Невский 140</p>
+            <p> <img src="icon/under2.png" alt="img-fluid"> м.Спасская</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-calendar-week" viewBox="0 0 16 16">
+                <path
+                  d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                <path
+                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+              </svg>
+              Запись по договоренности</p>
+            <button class="btn btn-outline-light open-popup">Записаться на сеанс</button>
+          </div>
+          <div class="style-contacts col-md-6 col-lg-12">
+            <h3>Бассейн "На Гороховой"</h3>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+                viewBox="0 0 16 16">
+                <path
+                  d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              </svg>
+              3-й проезд Иванова</p>
+            <p> <img src="icon/under2.png" alt="img-fluid"> м. Крестовский остров</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-calendar-week" viewBox="0 0 16 16">
+                <path
+                  d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                <path
+                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+              </svg>
+              Запись по договоренности</p>
+            <button class="btn btn-outline-light open-popup">Записаться на сеанс</button>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 margin-5">
+          <img class="img-fluid" src="img/maps.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          </a>
+          <span class="">© 2022 by Andrey Belov</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class=""><a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                <path
+                  d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+              </svg></a></li>
+          <li class=""><a class="nav-link" href="https://t.me/jojodeveloper"><svg xmlns="http://www.w3.org/2000/svg"
+                width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+              </svg></a></li>
+          <li class=""><a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+              </svg></a></li>
+        </ul>
+      </footer>
+    </div>
+  </div>
+
+  <!-- modal-widow -->
+  <div class="container">
+    <div class="popup__bg fonts-w400">
+      <form class="popup" method="post">
+        <img src="icon/close.png" class="close-popup">
+        <label>
+          <input type="text" name="name">
+          <div class="label__text">
+            Ваше имя
+          </div>
+        </label>
+        <label>
+          <input type="tel" name="tel">
+          <div class="label__text">
+            Ваш телефон
+          </div>
+        </label>
+        <label>
+          <input type="email" name="email">
+          <div class="label__text">
+            Ваш емейл
+          </div>
+        </label>
+        <!-- <label>
+          <textarea name="comment"></textarea>
+          <div class="label__text">
+            Коментарий
+          </div>
+        </label> -->
+        <button class="btn btn-outline-secondary me-2 fonts-w300" type="submit">Записаться</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/modal.window.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

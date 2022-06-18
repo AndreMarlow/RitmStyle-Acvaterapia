@@ -1,0 +1,21 @@
+.first-container-contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.style-contacts {
+    padding: 50px;
+    background: #018ABE;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.mar-contacts-b {
+    margin-bottom: 2.5px;
+}
+
+.mar-contacts-t {
+    margin-top: 2.5px;
+}

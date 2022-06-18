@@ -1,0 +1,18 @@
+.first-container-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price-main-info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.price-main-img {
+    margin-right: 10px;
+}
